@@ -1,0 +1,5 @@
+server.port: 8080
+spring.application.name: xproject-device
+mqtt:
+  port: 1883
+  fake-device-count: 3

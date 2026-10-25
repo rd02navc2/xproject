@@ -1,0 +1,10 @@
+services:
+  backend:
+    image: ${REGISTRY:-local}/xproject-device:${TAG:-latest}
+    build: ./backend
+    ports: ["8080:8080", "1883:1883"]
+  frontend:
+    image: ${REGISTRY:-local}/xproject-web:${TAG:-latest}
+    build: ./frontend
+    ports: ["80:80"]
+    depends_on: [backend]
